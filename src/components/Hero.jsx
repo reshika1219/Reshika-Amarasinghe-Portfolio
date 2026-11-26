@@ -44,6 +44,7 @@ export default function Hero() {
           <a href="#projects" className="brut brut-hover bg-ink px-7 py-3.5 font-bold text-cream">See the work →</a>
           <a href={profile.github} target="_blank" rel="noreferrer" className="brut brut-hover bg-cream px-7 py-3.5 font-bold">GitHub ↗</a>
           <a href={profile.linkedin} target="_blank" rel="noreferrer" className="brut brut-hover bg-cream px-7 py-3.5 font-bold">LinkedIn ↗</a>
+          <a href="Reshika-Amarasinghe-CV.pdf" download className="brut brut-hover bg-lime px-7 py-3.5 font-bold">Download CV ↓</a>
         </motion.div>
       </div>
 

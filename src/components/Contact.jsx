@@ -13,6 +13,7 @@ export default function Contact() {
       <div className="mt-6 flex flex-wrap gap-4 font-bold">
         <a href={profile.github} target="_blank" rel="noreferrer" className="brut-sm bg-cream px-5 py-2 hover:bg-lime">GitHub ↗</a>
         <a href={profile.linkedin} target="_blank" rel="noreferrer" className="brut-sm bg-cream px-5 py-2 hover:bg-lime">LinkedIn ↗</a>
+        <a href="Reshika-Amarasinghe-CV.pdf" download className="brut-sm bg-lime px-5 py-2 hover:bg-cream">Download CV ↓</a>
       </div>
       <div className="-mx-5 mt-20 rotate-1 overflow-hidden border-y-[3px] border-ink bg-lime py-3" aria-hidden>
         <div className="ribbon flex w-max whitespace-nowrap font-display text-2xl font-extrabold uppercase">
