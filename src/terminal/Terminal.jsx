@@ -90,7 +90,7 @@ export default function Terminal() {
           {blocks.map((b) => (
             <div key={b.id} className="mb-3">
               {b.cmd !== undefined && <div><Prompt />{b.cmd}</div>}
-              {b.out}
+              {b.out && <div className={b.cmd ? 'mt-3' : ''}>{b.out}</div>}
             </div>
           ))}
           <form onSubmit={submit} className="flex flex-wrap items-center">
