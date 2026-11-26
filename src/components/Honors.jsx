@@ -5,18 +5,14 @@ const groups = [['Certification', 'Certifications'], ['Esports', 'Esports'], ['A
 
 export default function Honors() {
   return (
-    <Section id="honors" kicker="Honors & achievements" title="Honors">
-      <div className="grid gap-6 md:grid-cols-3">
+    <Section id="honors" kicker="Recognition" title="Honors">
+      <div className="grid gap-12 md:grid-cols-3">
         {groups.map(([g, label]) => (
-          <div key={g} className="frame p-6">
-            <h3 className="text-center font-display text-sm font-bold uppercase tracking-[.3em] text-gold">{label}</h3>
-            <div className="gold-rule my-4" />
-            <ul className="space-y-5">
-              {honors.filter((h) => h.type === g).map((h) => (
-                <li key={h.title} className="flex gap-3"><span className="diamond mt-[.55em] shrink-0 !h-[6px] !w-[6px]" />
-                  <div><p className="font-display font-bold leading-snug text-gold-hi">{h.title}</p><p className="mt-1 text-sm text-gold-hi/60">{h.note}</p></div></li>
-              ))}
-            </ul>
+          <div key={g}>
+            <h3 className="border-b hair pb-2 text-[11px] font-medium uppercase tracking-[.3em] text-gold">{label}</h3>
+            <ul className="mt-5 space-y-5">{honors.filter((h) => h.type === g).map((h) => (
+              <li key={h.title}><p className="font-display text-gold-hi">{h.title}</p><p className="mt-1 text-sm text-gold-hi/45">{h.note}</p></li>
+            ))}</ul>
           </div>
         ))}
       </div>
