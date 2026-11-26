@@ -65,3 +65,12 @@ body {
 /* League-style gold-bevelled pointer */
 html, body { cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><defs><linearGradient id='f' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%231e2d3d'/><stop offset='1' stop-color='%23091428'/></linearGradient><linearGradient id='s' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='%23f0e6d2'/><stop offset='1' stop-color='%23c8aa6e'/></linearGradient></defs><path d='M4 3 L4 25 L10 19.6 L14.2 28.6 L18.2 26.8 L14 18 L22 18 Z' fill='url(%23f)' stroke='%23010a13' stroke-width='3.6' stroke-linejoin='round'/><path d='M4 3 L4 25 L10 19.6 L14.2 28.6 L18.2 26.8 L14 18 L22 18 Z' fill='url(%23f)' stroke='url(%23s)' stroke-width='1.6' stroke-linejoin='round'/><path d='M6.4 8.6 L6.4 20.2 L9.4 17.6' fill='none' stroke='%23f0e6d2' stroke-opacity='.5' stroke-width='.9' stroke-linecap='round'/></svg>") 4 3, auto; }
 a, button, [role="tab"], [data-hot], summary, label { cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><defs><linearGradient id='f' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23c8aa6e'/><stop offset='1' stop-color='%23785a28'/></linearGradient><linearGradient id='s' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='%23f0e6d2'/><stop offset='1' stop-color='%23c8aa6e'/></linearGradient></defs><path d='M4 3 L4 25 L10 19.6 L14.2 28.6 L18.2 26.8 L14 18 L22 18 Z' fill='url(%23f)' stroke='%23010a13' stroke-width='3.6' stroke-linejoin='round'/><path d='M4 3 L4 25 L10 19.6 L14.2 28.6 L18.2 26.8 L14 18 L22 18 Z' fill='url(%23f)' stroke='url(%23s)' stroke-width='1.6' stroke-linejoin='round'/><path d='M6.4 8.6 L6.4 20.2 L9.4 17.6' fill='none' stroke='%23f0e6d2' stroke-opacity='.5' stroke-width='.9' stroke-linecap='round'/></svg>") 4 3, pointer; }
+
+.fog {
+  background:
+    radial-gradient(40% 30% at 20% 60%, rgba(3,151,171,.22), transparent 70%),
+    radial-gradient(35% 25% at 80% 30%, rgba(200,170,110,.14), transparent 70%),
+    radial-gradient(45% 30% at 55% 90%, rgba(255,62,138,.08), transparent 70%);
+  animation: fogdrift 28s ease-in-out infinite alternate;
+}
+@keyframes fogdrift { from { transform: translate3d(-3%, 0, 0) scale(1) } to { transform: translate3d(3%, -2%, 0) scale(1.08) } }
