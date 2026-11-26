@@ -11,9 +11,7 @@ export default function Honors() {
         {honors.map((h, i) => (
           <motion.div key={h.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: (i % 3) * .08 }}
             className="panel flex gap-4 p-4 transition-transform hover:-translate-y-1" data-hot>
-            <div className="hex-clip grid h-14 w-14 shrink-0 place-items-center text-2xl" style={{ background: col[h.type] }}>
-              <span className="hex-clip grid h-[52px] w-[52px] place-items-center bg-void" style={{ color: col[h.type] }}>{h.icon}</span>
-            </div>
+            <div className="grid h-14 w-14 shrink-0 place-items-center rounded-full border-2 bg-void text-2xl" style={{ borderColor: col[h.type], color: col[h.type], boxShadow: `0 0 14px ${col[h.type]}44` }}>{h.icon}</div>
             <div>
               <p className="font-mono text-[10px] uppercase tracking-widest" style={{ color: col[h.type] }}>{h.type}</p>
               <h3 className="font-display text-sm font-bold leading-snug text-gold-hi">{h.title}</h3>

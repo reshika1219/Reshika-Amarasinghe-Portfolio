@@ -15,7 +15,7 @@ export default function Nav() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-gold-lo/70 bg-void/80 backdrop-blur-md">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
         <a href="#top" className="flex items-center gap-2" onMouseEnter={sfx.hover}>
-          <span className="hex-clip grid h-8 w-8 place-items-center bg-gold font-display text-sm font-black text-void">R</span>
+          <span className="grid h-8 w-8 place-items-center rounded-full border border-gold bg-void font-display text-sm font-bold text-gold">R</span>
           <span className="hidden font-display text-sm font-bold tracking-widest text-gold-hi sm:block">RESHIKA</span>
         </a>
         <ul className="hidden gap-6 md:flex">

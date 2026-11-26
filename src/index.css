@@ -12,7 +12,7 @@
   --color-arcane: #ff3e8a;
   --font-display: "Cinzel", serif;
   --font-sans: "Inter", system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
+  --font-mono: "Inter", system-ui, sans-serif;
 }
 
 html { scroll-behavior: smooth; }
@@ -34,28 +34,26 @@ body {
 }
 .hex-clip { clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); }
 .panel {
-  background: linear-gradient(160deg, rgba(10,26,46,.92), rgba(1,10,19,.92));
-  border: 1px solid var(--color-gold-lo);
-  box-shadow: inset 0 0 0 1px rgba(200,170,110,.12), 0 0 30px rgba(3,151,171,.06);
+  background: linear-gradient(180deg, rgba(9,20,40,.78), rgba(1,10,19,.88));
+  border: 1px solid transparent;
+  border-image: linear-gradient(180deg, #c8aa6e, #463714 60%, #1e2328) 1;
+  backdrop-filter: blur(6px);
   position: relative;
 }
-.panel::before, .panel::after {
-  content: ""; position: absolute; width: 14px; height: 14px; pointer-events: none;
-  border: 2px solid var(--color-gold);
-}
-.panel::before { top: -2px; left: -2px; border-right: 0; border-bottom: 0; }
-.panel::after { bottom: -2px; right: -2px; border-left: 0; border-top: 0; }
+.diamond { width: .5rem; height: .5rem; transform: rotate(45deg); background: var(--color-gold); }
 
 .btn-lol {
-  font-family: var(--font-display); font-weight: 700; letter-spacing: .15em; text-transform: uppercase;
-  padding: .85rem 2rem; color: var(--color-gold-hi);
-  background: linear-gradient(180deg, #1e2328, #0a0f14);
-  border: 2px solid var(--color-gold-lo); position: relative; transition: all .25s;
+  font-family: var(--font-display); font-weight: 700; font-size: .8rem; letter-spacing: .22em; text-transform: uppercase;
+  padding: .9rem 2.4rem; color: var(--color-gold-hi);
+  background: linear-gradient(180deg, #1e2328 0%, #0a0f14 100%);
+  border: 1px solid transparent; border-image: linear-gradient(180deg, #f0e6d2, #c8aa6e 40%, #785a28) 1;
+  transition: all .25s;
 }
-.btn-lol:hover { border-color: var(--color-gold); color: #fff; box-shadow: 0 0 22px rgba(200,170,110,.45), inset 0 0 14px rgba(10,200,185,.25); }
-.btn-lol.primary { border-color: var(--color-gold); background: linear-gradient(180deg, #0397ab, #064a5a); }
+.btn-lol:hover { color: #fff; background: linear-gradient(180deg, #0f3a46 0%, #06202a 100%); box-shadow: 0 0 24px rgba(10,200,185,.28), inset 0 0 18px rgba(10,200,185,.18); }
+.btn-lol.primary { background: linear-gradient(180deg, #0a4f5c, #04212a); }
+.btn-lol.primary:hover { background: linear-gradient(180deg, #0f7385, #07303a); }
 
-.section-title { font-family: var(--font-display); font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.section-title { font-family: var(--font-display); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 
 @keyframes shimmer { 0% { background-position: -200% 0 } 100% { background-position: 200% 0 } }
 .bar-fill { background: linear-gradient(90deg, #0397ab, #0ac8b9, #f0e6d2, #0ac8b9, #0397ab); background-size: 200% 100%; animation: shimmer 2.2s linear infinite; }
