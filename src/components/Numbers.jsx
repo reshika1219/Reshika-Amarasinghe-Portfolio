@@ -24,7 +24,7 @@ export default function Numbers() {
           <figcaption className="mt-3 text-xs text-cream/50">Illustration: a dot grid of Sri Lanka. Highlighted dots echo the top-100 cells, not their real locations.</figcaption>
         </motion.figure>
 
-        <div className="grid content-start gap-6 sm:grid-cols-2">
+        <div className="grid min-w-0 grid-cols-1 content-start gap-6 sm:grid-cols-2">
           {nums.map(([n, l, c, r], i) => (
             <motion.div key={n} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * .08 }} className={`brut brut-hover p-6 ${c} ${r}`}>
               <p className="font-display text-4xl font-extrabold leading-none tracking-tight sm:text-5xl">{n}</p>
@@ -33,13 +33,13 @@ export default function Numbers() {
           ))}
           <div className="brut bg-pink p-6 sm:col-span-2">
             <p className="font-display text-lg font-extrabold uppercase">The SLT funnel</p>
-            <ol className="mt-4 flex items-center gap-2 sm:gap-3">
+            <ol className="mt-4 grid grid-cols-2 gap-3 sm:flex sm:items-center">
               {funnel.map(([n, l], i) => (
-                <li key={l} className="flex flex-1 items-center gap-2 sm:gap-3">
+                <li key={l} className="flex min-w-0 flex-1 items-center gap-2 sm:gap-3">
                   <div className="brut-sm flex-1 bg-cream p-2 text-center" style={{ transform: `scale(${1 - i * .06})` }}>
                     <p className="font-display text-base font-extrabold leading-tight sm:text-xl">{n}</p><p className="text-[10px] font-semibold uppercase leading-tight sm:text-xs">{l}</p>
                   </div>
-                  {i < funnel.length - 1 && <span aria-hidden className="font-extrabold">→</span>}
+                  {i < funnel.length - 1 && <span aria-hidden className="hidden font-extrabold sm:inline">→</span>}
                 </li>
               ))}
             </ol>
