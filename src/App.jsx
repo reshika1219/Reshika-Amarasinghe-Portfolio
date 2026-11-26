@@ -1,4 +1,7 @@
+import { useEffect } from 'react'
 import Nav from './components/Nav'
+import Progress from './components/Progress'
+import { applyPalette, savedPalette } from './palette'
 import Hero from './components/Hero'
 import Numbers from './components/Numbers'
 import Experience from './components/Experience'
@@ -7,5 +10,6 @@ import Skills from './components/Skills'
 import Contact from './components/Contact'
 
 export default function App() {
-  return (<><Nav /><main><Hero /><Numbers /><Experience /><Projects /><Skills /><Contact /></main></>)
+  useEffect(() => { applyPalette(savedPalette()) }, [])
+  return (<><Progress /><Nav /><main><Hero /><Numbers /><Experience /><Projects /><Skills /><Contact /></main></>)
 }
