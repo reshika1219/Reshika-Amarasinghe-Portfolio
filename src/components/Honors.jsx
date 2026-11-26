@@ -6,7 +6,7 @@ const col = { Certification: '#0ac8b9', Esports: '#ff3e8a', Academic: '#c8aa6e' 
 
 export default function Honors() {
   return (
-    <Section id="honors" kicker="// HONORS & ACHIEVEMENTS" title="Honors">
+    <Section id="honors" kicker="HONORS & ACHIEVEMENTS" title="Honors">
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {honors.map((h, i) => (
           <motion.div key={h.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: (i % 3) * .08 }}

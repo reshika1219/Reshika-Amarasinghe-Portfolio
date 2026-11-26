@@ -3,7 +3,7 @@ import { profile, education } from '../data/content'
 
 export default function About() {
   return (
-    <Section id="about" kicker="// SUMMONER PROFILE" title="Profile">
+    <Section id="about" kicker="SUMMONER PROFILE" title="Profile">
       <div className="grid gap-6 lg:grid-cols-3">
         <div className="panel p-6 sm:p-8 lg:col-span-2">
           <p className="text-lg leading-relaxed text-[#cdbe91]">{profile.summary}</p>

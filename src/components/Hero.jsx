@@ -28,7 +28,7 @@ export default function Hero() {
     <section id="top" className="relative flex min-h-screen items-center px-4 pb-16 pt-28 sm:px-6">
       <div className="pointer-events-none absolute inset-0" style={{ background: 'radial-gradient(ellipse at 70% 30%, rgba(255,62,138,.10), transparent 55%), radial-gradient(ellipse at 20% 70%, rgba(3,151,171,.18), transparent 55%)' }} />
       <div className="relative mx-auto w-full max-w-6xl">
-        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: .1 }} className="font-mono text-xs tracking-[.5em] text-hex">// WELCOME, SUMMONER</motion.p>
+        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: .1 }} className="font-mono text-xs tracking-[.5em] text-hex">WELCOME, SUMMONER</motion.p>
         <motion.h1 initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .2, duration: .8 }}
           className="section-title gold-text mt-4 text-5xl leading-[1.02] sm:text-7xl lg:text-8xl">
           Reshika<br />Amarasinghe

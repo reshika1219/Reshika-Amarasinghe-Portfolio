@@ -4,7 +4,7 @@ import { experience } from '../data/content'
 
 export default function History() {
   return (
-    <Section id="history" kicker="// MATCH HISTORY" title="Experience">
+    <Section id="history" kicker="MATCH HISTORY" title="Experience">
       <div className="space-y-5">
         {experience.map((x, i) => (
           <motion.article key={x.org} initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * .1 }}
