@@ -1,42 +1,33 @@
-import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { profile, stats } from '../data/content'
+import { profile, skills } from '../data/content'
 
-const lines = [
-  ['whoami', 'reshika-amarasinghe  # data science undergrad, ML engineer'],
-  ['cat focus.txt', 'geospatial analytics · predictive modelling · agentic AI'],
-  ['cat research.txt', 'GNNs + knowledge graphs + LLMs for adaptive learning'],
-]
+const all = skills.flatMap((g) => g.items.filter(([, t]) => t < 2).map(([n]) => n))
 
 export default function Hero() {
-  const [n, setN] = useState(0)
-  useEffect(() => { if (n < lines.length) { const t = setTimeout(() => setN(n + 1), 650); return () => clearTimeout(t) } }, [n])
+  const fade = (d) => ({ initial: { opacity: 0, y: 24 }, animate: { opacity: 1, y: 0 }, transition: { delay: d, duration: .7, ease: 'easeOut' } })
   return (
-    <section id="top" className="mx-auto flex min-h-screen max-w-5xl flex-col justify-center px-6 pb-16 pt-28">
-      <div className="rounded-lg border border-line bg-surface shadow-[0_0_60px_rgba(61,220,151,.06)]">
-        <div className="flex items-center gap-2 border-b border-line px-4 py-3"><i className="h-3 w-3 rounded-full bg-[#ff5f57]" /><i className="h-3 w-3 rounded-full bg-[#febc2e]" /><i className="h-3 w-3 rounded-full bg-[#28c840]" /><span className="ml-3 font-mono text-xs text-dim">~/reshika — zsh</span></div>
-        <div className="p-6 font-mono text-sm leading-7 sm:p-8">
-          {lines.slice(0, n + 1).map(([c, o], i) => (
-            <div key={c}>
-              <p><span className="text-accent">❯</span> <span className={i === n && n < lines.length ? 'caret' : ''}>{c}</span></p>
-              {i < n && <p className="text-dim">{o}</p>}
-            </div>
-          ))}
-          {n >= lines.length && <p><span className="text-accent">❯</span> <span className="caret" /></p>}
+    <section id="top" className="relative overflow-hidden pt-36 sm:pt-44">
+      <div aria-hidden className="pointer-events-none absolute left-1/2 top-0 -z-10 h-[520px] w-[900px] -translate-x-1/2 rounded-full opacity-40 blur-3xl" style={{ background: 'radial-gradient(closest-side, #c7d2fe, transparent), radial-gradient(closest-side at 80% 30%, #ffd9cc, transparent)' }} />
+      <div className="mx-auto max-w-6xl px-6 text-center">
+        <motion.p {...fade(0)} className="mx-auto inline-flex items-center gap-2 rounded-full border border-line bg-white px-4 py-1.5 text-sm text-mute shadow-sm">
+          <i className="h-2 w-2 rounded-full bg-emerald-500" /> Open to internships &amp; graduate roles
+        </motion.p>
+        <motion.p {...fade(.1)} className="mt-8 text-lg font-medium text-mute">Hi, I'm Reshika Amarasinghe.</motion.p>
+        <motion.h1 {...fade(.2)} className="mx-auto mt-3 max-w-4xl text-5xl font-semibold leading-[1.04] tracking-tight sm:text-7xl">
+          I turn national-scale data into <span className="serif grad-text pr-1 text-[1.08em]">decisions</span>, and LLMs into things you can trust.
+        </motion.h1>
+        <motion.p {...fade(.35)} className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-mute">Data science undergraduate and ML engineer, building geospatial pipelines, predictive models and agentic AI systems.</motion.p>
+        <motion.div {...fade(.5)} className="mt-9 flex flex-wrap justify-center gap-3">
+          <a href="#projects" className="rounded-full bg-ink px-7 py-3.5 text-sm font-medium text-white transition-transform hover:-translate-y-0.5">See my work</a>
+          <a href={profile.github} target="_blank" rel="noreferrer" className="rounded-full border border-line bg-white px-7 py-3.5 text-sm font-medium transition-transform hover:-translate-y-0.5">GitHub ↗</a>
+          <a href={profile.linkedin} target="_blank" rel="noreferrer" className="rounded-full border border-line bg-white px-7 py-3.5 text-sm font-medium transition-transform hover:-translate-y-0.5">LinkedIn ↗</a>
+        </motion.div>
+      </div>
+      <div className="mt-20 overflow-hidden border-y border-line bg-white py-5" aria-hidden>
+        <div className="marquee flex w-max gap-10 whitespace-nowrap text-sm font-medium text-mute">
+          {[...all, ...all].map((n, i) => <span key={i} className="flex items-center gap-10">{n}<i className="h-1 w-1 rounded-full bg-line" /></span>)}
         </div>
       </div>
-      <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.2, duration: .7 }} className="mt-12 text-5xl font-semibold leading-[1.05] tracking-tight sm:text-7xl">
-        Reshika <span className="text-accent">Amarasinghe</span>
-      </motion.h1>
-      <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }} className="mt-5 max-w-2xl text-xl leading-relaxed text-dim">{profile.tagline}</motion.p>
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.7 }} className="mt-8 flex flex-wrap gap-4 font-mono text-sm">
-        <a href="#projects" className="rounded border border-accent bg-accent/10 px-5 py-2.5 text-accent transition-colors hover:bg-accent hover:text-bg">./view-projects</a>
-        <a href={profile.github} target="_blank" rel="noreferrer" className="rounded border border-line px-5 py-2.5 text-dim transition-colors hover:border-fg hover:text-fg">github ↗</a>
-        <a href={profile.linkedin} target="_blank" rel="noreferrer" className="rounded border border-line px-5 py-2.5 text-dim transition-colors hover:border-fg hover:text-fg">linkedin ↗</a>
-      </motion.div>
-      <dl className="mt-14 grid max-w-3xl grid-cols-2 gap-6 font-mono sm:grid-cols-4">
-        {stats.map((s) => <div key={s.label}><dt className="text-2xl text-fg">{s.prefix}{s.decimals ? s.value.toFixed(s.decimals) : s.value.toLocaleString()}</dt><dd className="mt-1 text-[11px] text-dim">{s.label}</dd></div>)}
-      </dl>
     </section>
   )
 }

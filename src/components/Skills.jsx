@@ -1,24 +1,20 @@
 import Section from './Section'
 import { skills } from '../data/content'
 
+const chip = ['bg-ink text-white', 'border border-line bg-white text-ink', 'bg-black/5 text-mute']
+
 export default function Skills() {
-  const obj = skills.map((g) => [g.cat.toLowerCase().replace(/[^a-z]+/g, '_'), g.items])
   return (
-    <Section id="skills" cmd="cat skills.json">
-      <pre className="whitespace-pre-wrap break-words rounded-lg border border-line bg-surface p-6 font-mono text-sm leading-7 sm:p-8">
-        <code>
-          <span className="text-dim">{'{'}</span>{'\n'}
-          {obj.map(([k, items], gi) => (
-            <span key={k}>
-              {'  '}<span className="text-cyan">"{k}"</span><span className="text-dim">: [</span>
-              {items.map(([n, t], i) => <span key={n}><span className={t === 0 ? 'text-accent' : t === 1 ? 'text-fg' : 'text-dim'}>"{n}"</span>{i < items.length - 1 && <span className="text-dim">, </span>}</span>)}
-              <span className="text-dim">]{gi < obj.length - 1 ? ',' : ''}</span>{'\n'}
-            </span>
-          ))}
-          <span className="text-dim">{'}'}</span>
-        </code>
-      </pre>
-      <p className="mt-3 font-mono text-xs text-dim"><span className="text-accent">green</span> = daily · white = proficient · gray = familiar</p>
+    <Section id="skills" label="Skills" title="My toolkit.">
+      <div className="grid gap-6 sm:grid-cols-2">
+        {skills.map((g) => (
+          <div key={g.cat} className="rounded-3xl border border-line bg-white p-7">
+            <h3 className="text-sm font-semibold text-brand">{g.cat}</h3>
+            <ul className="mt-4 flex flex-wrap gap-2">{g.items.map(([n, t]) => <li key={n} className={`rounded-full px-3.5 py-1.5 text-sm ${chip[t]}`}>{n}</li>)}</ul>
+          </div>
+        ))}
+      </div>
+      <p className="mt-6 text-sm text-mute">Filled = what I use most · outlined = comfortable · grey = familiar</p>
     </Section>
   )
 }
