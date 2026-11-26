@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --color-void: #010a13;
+  --color-navy: #091428;
+  --color-panel: #0a1a2e;
+  --color-gold: #c8aa6e;
+  --color-gold-hi: #f0e6d2;
+  --color-gold-lo: #785a28;
+  --color-hex: #0ac8b9;
+  --color-hex-deep: #0397ab;
+  --color-arcane: #ff3e8a;
+  --font-display: "Cinzel", serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--color-void);
+  color: #a09b8c;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+::selection { background: var(--color-hex); color: var(--color-void); }
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--color-void); }
+::-webkit-scrollbar-thumb { background: linear-gradient(var(--color-gold), var(--color-gold-lo)); }
+
+@media (pointer: fine) { body.lol-cursor, body.lol-cursor * { cursor: none !important; } }
+
+.gold-text {
+  background: linear-gradient(180deg, #f0e6d2 0%, #c8aa6e 55%, #785a28 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.hex-clip { clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); }
+.panel {
+  background: linear-gradient(160deg, rgba(10,26,46,.92), rgba(1,10,19,.92));
+  border: 1px solid var(--color-gold-lo);
+  box-shadow: inset 0 0 0 1px rgba(200,170,110,.12), 0 0 30px rgba(3,151,171,.06);
+  position: relative;
+}
+.panel::before, .panel::after {
+  content: ""; position: absolute; width: 14px; height: 14px; pointer-events: none;
+  border: 2px solid var(--color-gold);
+}
+.panel::before { top: -2px; left: -2px; border-right: 0; border-bottom: 0; }
+.panel::after { bottom: -2px; right: -2px; border-left: 0; border-top: 0; }
+
+.btn-lol {
+  font-family: var(--font-display); font-weight: 700; letter-spacing: .15em; text-transform: uppercase;
+  padding: .85rem 2rem; color: var(--color-gold-hi);
+  background: linear-gradient(180deg, #1e2328, #0a0f14);
+  border: 2px solid var(--color-gold-lo); position: relative; transition: all .25s;
+}
+.btn-lol:hover { border-color: var(--color-gold); color: #fff; box-shadow: 0 0 22px rgba(200,170,110,.45), inset 0 0 14px rgba(10,200,185,.25); }
+.btn-lol.primary { border-color: var(--color-gold); background: linear-gradient(180deg, #0397ab, #064a5a); }
+
+.section-title { font-family: var(--font-display); font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+
+@keyframes shimmer { 0% { background-position: -200% 0 } 100% { background-position: 200% 0 } }
+.bar-fill { background: linear-gradient(90deg, #0397ab, #0ac8b9, #f0e6d2, #0ac8b9, #0397ab); background-size: 200% 100%; animation: shimmer 2.2s linear infinite; }
+@keyframes float { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-8px) } }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
