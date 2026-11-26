@@ -1,20 +1,24 @@
 import Section from './Section'
 import { skills } from '../data/content'
 
-const cls = ['text-ink font-medium', 'text-ink/70', 'text-ink/40']
-
 export default function Skills() {
+  const obj = skills.map((g) => [g.cat.toLowerCase().replace(/[^a-z]+/g, '_'), g.items])
   return (
-    <Section id="skills" n="03" title="Skills">
-      <div className="grid gap-x-12 gap-y-10 sm:grid-cols-2">
-        {skills.map((g) => (
-          <div key={g.cat}>
-            <h3 className="font-mono text-xs uppercase tracking-widest text-accent">{g.cat}</h3>
-            <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-1.5">{g.items.map(([n, t]) => <li key={n} className={`whitespace-nowrap ${cls[t]}`}>{n}</li>)}</ul>
-          </div>
-        ))}
-      </div>
-      <p className="mt-10 font-mono text-[11px] text-mute">Darker = used most · lighter = familiar</p>
+    <Section id="skills" cmd="cat skills.json">
+      <pre className="whitespace-pre-wrap break-words rounded-lg border border-line bg-surface p-6 font-mono text-sm leading-7 sm:p-8">
+        <code>
+          <span className="text-dim">{'{'}</span>{'\n'}
+          {obj.map(([k, items], gi) => (
+            <span key={k}>
+              {'  '}<span className="text-cyan">"{k}"</span><span className="text-dim">: [</span>
+              {items.map(([n, t], i) => <span key={n}><span className={t === 0 ? 'text-accent' : t === 1 ? 'text-fg' : 'text-dim'}>"{n}"</span>{i < items.length - 1 && <span className="text-dim">, </span>}</span>)}
+              <span className="text-dim">]{gi < obj.length - 1 ? ',' : ''}</span>{'\n'}
+            </span>
+          ))}
+          <span className="text-dim">{'}'}</span>
+        </code>
+      </pre>
+      <p className="mt-3 font-mono text-xs text-dim"><span className="text-accent">green</span> = daily · white = proficient · gray = familiar</p>
     </Section>
   )
 }

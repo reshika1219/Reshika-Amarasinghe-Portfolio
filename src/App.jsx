@@ -1,16 +1,11 @@
 import Nav from './components/Nav'
 import Hero from './components/Hero'
-import Work from './components/Work'
+import Pipeline from './components/Pipeline'
+import Experience from './components/Experience'
 import Projects from './components/Projects'
 import Skills from './components/Skills'
-import About from './components/About'
 import Contact from './components/Contact'
 
 export default function App() {
-  return (
-    <>
-      <Nav />
-      <main><Hero /><Work /><Projects /><Skills /><About /><Contact /></main>
-    </>
-  )
+  return (<><Nav /><main><Hero /><Pipeline /><Experience /><Projects /><Skills /><Contact /></main></>)
 }
