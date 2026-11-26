@@ -7,9 +7,10 @@ import Numbers from './components/Numbers'
 import Experience from './components/Experience'
 import Projects from './components/Projects'
 import Skills from './components/Skills'
+import Offline from './components/Offline'
 import Contact from './components/Contact'
 
 export default function App() {
   useEffect(() => { applyPalette(savedPalette()) }, [])
-  return (<><Progress /><Nav /><main><Hero /><Numbers /><Experience /><Projects /><Skills /><Contact /></main></>)
+  return (<><Progress /><Nav /><main><Hero /><Numbers /><Experience /><Projects /><Skills /><Offline /><Contact /></main></>)
 }
