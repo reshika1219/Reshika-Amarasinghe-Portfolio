@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import Loading from './components/Loading'
-import Cursor from './components/Cursor'
 import HexCanvas from './components/HexCanvas'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
@@ -31,7 +30,6 @@ export default function App() {
 
   return (
     <>
-      <Cursor />
       <AnimatePresence>{loading && <Loading onDone={() => setLoading(false)} />}</AnimatePresence>
       <AnimatePresence>
         {penta && (
