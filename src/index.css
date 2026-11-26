@@ -80,3 +80,19 @@ a, button, [role="tab"], [data-hot], summary, label { cursor: url("data:image/sv
 }
 .link-u { background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; transition: background-size .3s, color .2s; }
 .link-u:hover { background-size: 100% 1px; color: var(--color-gold-hi); }
+
+/* ---- Client direction ---- */
+.frame { position: relative; border: 1px solid #463714; background: linear-gradient(180deg, rgba(9,20,40,.85), rgba(1,10,19,.92)); box-shadow: inset 0 0 0 3px rgba(1,10,19,.9), inset 0 0 0 4px rgba(120,90,40,.45); }
+.frame::before {
+  content: ""; position: absolute; inset: -2px; pointer-events: none; z-index: 5;
+  --g: linear-gradient(#c8aa6e, #c8aa6e);
+  background:
+    var(--g) 0 0 / 22px 2px no-repeat, var(--g) 0 0 / 2px 22px no-repeat,
+    var(--g) 100% 0 / 22px 2px no-repeat, var(--g) 100% 0 / 2px 22px no-repeat,
+    var(--g) 0 100% / 22px 2px no-repeat, var(--g) 0 100% / 2px 22px no-repeat,
+    var(--g) 100% 100% / 22px 2px no-repeat, var(--g) 100% 100% / 2px 22px no-repeat;
+}
+.gold-rule { height: 1px; background: linear-gradient(90deg, transparent, #c8aa6e, transparent); }
+.tile-frame { border: 2px solid #463714; transition: all .2s; }
+.tile-frame:hover { border-color: #c8aa6e; }
+.tile-frame.on { border-color: #f0e6d2; box-shadow: 0 0 20px rgba(200,170,110,.55), inset 0 0 0 1px #785a28; }
