@@ -15,7 +15,7 @@ import { sfx } from './lib'
 const KONAMI = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a']
 
 export default function App() {
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(() => !(new URLSearchParams(location.search).has('noload') || sessionStorage.getItem('seen')))
   const [penta, setPenta] = useState(false)
 
   useEffect(() => {
@@ -30,7 +30,7 @@ export default function App() {
 
   return (
     <>
-      <AnimatePresence>{loading && <Loading onDone={() => setLoading(false)} />}</AnimatePresence>
+      <AnimatePresence>{loading && <Loading onDone={() => { sessionStorage.setItem('seen', '1'); setLoading(false) }} />}</AnimatePresence>
       <AnimatePresence>
         {penta && (
           <motion.div initial={{ opacity: 0, scale: .6 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }}
