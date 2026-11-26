@@ -26,7 +26,7 @@ function Neofetch() {
       <div className="min-w-0 self-center text-[13px] leading-[1.7] sm:text-sm">
         <Out>
           <div className="flex items-center gap-2"><span className="acc">reshika@sliit</span><span aria-hidden className="flex-1 border-t border-line" /></div>
-          <div className="pl-2 text-white">Reshika Amarasinghe</div>
+          <div className="text-center text-white">Reshika Amarasinghe</div>
           <Row k="Role">Data Science undergraduate, Year 4</Row>
           <Row k="University">SLIIT, Sri Lanka</Row>
           <Row k="Focus">Geospatial · Adaptive learning · Verified AI</Row>
