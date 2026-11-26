@@ -29,7 +29,7 @@ export default function App() {
   }, [])
 
   return (
-    <>
+    <div className="grain">
       <AnimatePresence>{loading && <Loading onDone={() => { sessionStorage.setItem('seen', '1'); setLoading(false) }} />}</AnimatePresence>
       <AnimatePresence>
         {penta && (
@@ -44,6 +44,6 @@ export default function App() {
       <main>
         <Hero /><About /><History /><Champions /><Shop /><Honors /><Contact />
       </main>
-    </>
+    </div>
   )
 }

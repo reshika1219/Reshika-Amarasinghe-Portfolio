@@ -1,36 +1,27 @@
 import { useEffect, useState } from 'react'
 import { isSoundOn, setSound, sfx } from '../lib'
 
-const links = [['about', 'Profile'], ['history', 'Match History'], ['champions', 'Champions'], ['shop', 'Item Shop'], ['honors', 'Honors'], ['contact', 'Queue Up']]
+const links = [['about', 'Profile'], ['history', 'Experience'], ['champions', 'Projects'], ['shop', 'Skills'], ['honors', 'Honors'], ['contact', 'Contact']]
 
 export default function Nav() {
   const [on, setOn] = useState(isSoundOn())
-  const [active, setActive] = useState('')
+  const [solid, setSolid] = useState(false)
   useEffect(() => {
-    const io = new IntersectionObserver((es) => es.forEach((e) => e.isIntersecting && setActive(e.target.id)), { rootMargin: '-45% 0px -50% 0px' })
-    links.forEach(([id]) => { const el = document.getElementById(id); el && io.observe(el) })
-    return () => io.disconnect()
+    const f = () => setSolid(scrollY > 40)
+    f(); addEventListener('scroll', f, { passive: true })
+    return () => removeEventListener('scroll', f)
   }, [])
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-gold-lo/70 bg-void/80 backdrop-blur-md">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
-        <a href="#top" className="flex items-center gap-2" onMouseEnter={sfx.hover}>
-          <span className="grid h-8 w-8 place-items-center rounded-full border border-gold bg-void font-display text-sm font-bold text-gold">R</span>
-          <span className="hidden font-display text-sm font-bold tracking-widest text-gold-hi sm:block">RESHIKA</span>
-        </a>
-        <ul className="hidden gap-6 md:flex">
+    <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${solid ? 'border-b border-gold-lo/40 bg-void/85 backdrop-blur-md' : 'bg-gradient-to-b from-void/70 to-transparent'}`}>
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
+        <a href="#top" className="font-display text-sm font-bold tracking-[.3em] text-gold-hi" onMouseEnter={sfx.hover}>RESHIKA</a>
+        <ul className="hidden gap-8 md:flex">
           {links.map(([id, label]) => (
-            <li key={id}>
-              <a href={`#${id}`} onMouseEnter={sfx.hover} onClick={sfx.click}
-                className={`font-display text-xs font-bold uppercase tracking-[.2em] transition-colors hover:text-hex ${active === id ? 'text-hex' : 'text-gold/80'}`}>{label}</a>
-            </li>
+            <li key={id}><a href={`#${id}`} onMouseEnter={sfx.hover} onClick={sfx.click} className="link-u text-[11px] font-semibold uppercase tracking-[.25em] text-gold-hi/70">{label}</a></li>
           ))}
         </ul>
-        <button aria-pressed={on} aria-label="Toggle sound effects"
-          onClick={() => { const n = !on; setSound(n); setOn(n); n && sfx.select() }}
-          className="border border-gold-lo px-3 py-1 font-mono text-[11px] tracking-widest text-gold hover:border-gold">
-          SFX {on ? 'ON' : 'OFF'}
-        </button>
+        <button aria-pressed={on} aria-label="Toggle sound effects" onClick={() => { const n = !on; setSound(n); setOn(n); n && sfx.select() }}
+          className="text-[11px] font-semibold tracking-[.25em] text-gold-hi/60 hover:text-gold-hi">SOUND {on ? 'ON' : 'OFF'}</button>
       </nav>
     </header>
   )

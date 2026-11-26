@@ -55,6 +55,9 @@ export const experience = [
 export const projects = [
   {
     id: 'kg',
+    champ: "Swain",
+    art: 'Swain_0',
+    short: 'Knowledge Graphs',
     name: 'The Verifier',
     title: 'Pedagogy-Typed Knowledge Graphs',
     role: 'Researcher',
@@ -72,6 +75,9 @@ export const projects = [
   },
   {
     id: 'agentic',
+    champ: "Orianna",
+    art: 'Orianna_0',
+    short: 'Agentic AI',
     name: 'The Orchestrator',
     title: 'Agentic AI System',
     role: 'AI Engineer',
@@ -89,6 +95,9 @@ export const projects = [
   },
   {
     id: 'campus',
+    champ: "Jayce",
+    art: 'Jayce_0',
+    short: 'Campus Hub',
     name: 'The Architect',
     title: 'Smart Campus Operations Hub',
     role: 'Full-Stack Dev',
@@ -106,6 +115,9 @@ export const projects = [
   },
   {
     id: 'stats',
+    champ: "Zilean",
+    art: 'Zilean_0',
+    short: 'Viz Study',
     name: 'The Analyst',
     title: 'Data Visualisation & Comprehension Study',
     role: 'Statistician',
@@ -123,6 +135,9 @@ export const projects = [
   },
   {
     id: 'bi',
+    champ: "Ezreal",
+    art: 'Ezreal_0',
+    short: 'Airline BI',
     name: 'The Cartographer',
     title: 'Airline BI & Data Warehouse',
     role: 'Data Engineer',
@@ -140,6 +155,9 @@ export const projects = [
   },
   {
     id: 'churn',
+    champ: "Vel'Koz",
+    art: 'Velkoz_0',
+    short: 'Churn Model',
     name: 'The Oracle',
     title: 'Credit Card Churn Prediction',
     role: 'ML Engineer',
@@ -157,6 +175,9 @@ export const projects = [
   },
   {
     id: 'yaka',
+    champ: "Blitzcrank",
+    art: 'Blitzcrank_0',
+    short: 'Yakadabadu',
     name: 'The Navigator',
     title: 'Yakadabadu.lk Recycling Platform',
     role: 'Full-Stack Dev',
@@ -202,3 +223,7 @@ export const honors = [
   { icon: '∞', title: 'Mathematics Olympiad 2017', note: 'Provincial level participant', type: 'Academic' },
   { icon: '✎', title: 'English Day 2017', note: 'Provincial level, Dictation', type: 'Academic' },
 ]
+
+export const splash = (a) => `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${a}.jpg`
+export const tile = (a) => `https://ddragon.leagueoflegends.com/cdn/img/champion/tiles/${a}.jpg`
+export const heroArt = 'Viktor_0'

@@ -1,23 +1,21 @@
-import { motion } from 'framer-motion'
 import Section from './Section'
 import { honors } from '../data/content'
 
-const col = { Certification: '#0ac8b9', Esports: '#ff3e8a', Academic: '#c8aa6e' }
+const groups = ['Certification', 'Esports', 'Academic']
 
 export default function Honors() {
   return (
-    <Section id="honors" kicker="HONORS & ACHIEVEMENTS" title="Honors">
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {honors.map((h, i) => (
-          <motion.div key={h.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: (i % 3) * .08 }}
-            className="panel flex gap-4 p-4 transition-transform hover:-translate-y-1" data-hot>
-            <div className="grid h-14 w-14 shrink-0 place-items-center rounded-full border-2 bg-void text-2xl" style={{ borderColor: col[h.type], color: col[h.type], boxShadow: `0 0 14px ${col[h.type]}44` }}>{h.icon}</div>
-            <div>
-              <p className="font-mono text-[10px] uppercase tracking-widest" style={{ color: col[h.type] }}>{h.type}</p>
-              <h3 className="font-display text-sm font-bold leading-snug text-gold-hi">{h.title}</h3>
-              <p className="mt-1 text-xs text-[#b9ad8c]">{h.note}</p>
-            </div>
-          </motion.div>
+    <Section id="honors" kicker="Recognition" title="Honors">
+      <div className="grid gap-12 md:grid-cols-3">
+        {groups.map((g) => (
+          <div key={g}>
+            <h3 className="border-b border-gold-lo/50 pb-2 text-[11px] font-semibold uppercase tracking-[.3em] text-gold">{g === 'Certification' ? 'Certifications' : g}</h3>
+            <ul className="mt-5 space-y-5">
+              {honors.filter((h) => h.type === g).map((h) => (
+                <li key={h.title}><p className="font-display font-bold text-gold-hi">{h.title}</p><p className="mt-1 text-sm text-gold-hi/60">{h.note}</p></li>
+              ))}
+            </ul>
+          </div>
         ))}
       </div>
     </Section>

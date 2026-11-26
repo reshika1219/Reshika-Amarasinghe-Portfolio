@@ -3,25 +3,19 @@ import { profile } from '../data/content'
 import { sfx } from '../lib'
 
 export default function Contact() {
-  const links = [['GitHub', profile.github, 'github.com/reshika1219'], ['LinkedIn', profile.linkedin, 'linkedin.com/in/reshika-amarasinghe'], ['Email', `mailto:${profile.email}`, profile.email]]
+  const links = [['GitHub', profile.github], ['LinkedIn', profile.linkedin], ['Email', `mailto:${profile.email}`]]
   return (
-    <Section id="contact" kicker="READY CHECK" title="Queue Up">
-      <div className="panel mx-auto max-w-3xl p-8 text-center sm:p-12">
-        <p className="font-display text-xl text-gold-hi sm:text-2xl">Looking for an ML / data teammate? Let's find a match.</p>
-        <p className="mx-auto mt-3 max-w-xl text-[#b9ad8c]">Open to internships, graduate roles and research collaborations in ML, data science and applied AI.</p>
-        <a href={`mailto:${profile.email}`} onMouseEnter={sfx.hover} onClick={sfx.victory} className="btn-lol primary mt-8 inline-block text-lg">Find Match</a>
-        <div className="mt-10 grid gap-3 sm:grid-cols-3">
-          {links.map(([n, href, t]) => (
-            <a key={n} href={href} target={n === 'Email' ? undefined : '_blank'} rel="noreferrer" onMouseEnter={sfx.hover} onClick={sfx.click}
-              className="border border-gold-lo p-3 transition-colors hover:border-hex hover:bg-hex/10">
-              <span className="block font-display text-sm font-bold text-gold">{n}</span>
-              <span className="block truncate font-mono text-[11px] text-[#b9ad8c]">{t}</span>
-            </a>
-          ))}
-        </div>
+    <Section id="contact" kicker="Say hello" title="Contact">
+      <p className="max-w-3xl font-display text-3xl font-bold leading-snug text-gold-hi sm:text-5xl">Looking for an ML or data teammate? Let's talk.</p>
+      <p className="mt-6 max-w-xl text-gold-hi/70">Open to internships, graduate roles and research collaborations in ML, data science and applied AI.</p>
+      <div className="mt-10 flex flex-wrap gap-x-10 gap-y-4">
+        {links.map(([n, href]) => (
+          <a key={n} href={href} target={n === 'Email' ? undefined : '_blank'} rel="noreferrer" onMouseEnter={sfx.hover} onClick={n === 'Email' ? sfx.victory : sfx.click}
+            className="link-u font-display text-xl font-bold uppercase tracking-[.15em] text-gold">{n} ↗</a>
+        ))}
       </div>
-      <p className="mt-16 text-center font-mono text-xs tracking-widest text-gold/40">
-        © {new Date().getFullYear()} RESHIKA AMARASINGHE · FAN-MADE TRIBUTE, NOT AFFILIATED WITH RIOT GAMES · TRY THE KONAMI CODE
+      <p className="mt-24 max-w-3xl text-[11px] leading-relaxed tracking-wide text-gold-hi/40">
+        © {new Date().getFullYear()} Reshika Amarasinghe. This is a fan-made, non-commercial tribute and is not endorsed by Riot Games. League of Legends and all champion art are trademarks or property of Riot Games, Inc.
       </p>
     </Section>
   )
