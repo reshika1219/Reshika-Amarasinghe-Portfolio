@@ -3,14 +3,13 @@ export const profile = {
   title: 'Data Science Undergraduate · ML Engineer',
   tagline: 'I turn national-scale data into decisions, and LLMs into things you can trust.',
   summary:
-    'Fourth-year Data Science undergraduate at SLIIT (CGPA 3.37 / 4.0) with a completed ML Engineering internship and real-world experience in geospatial analytics, predictive modelling and agentic AI. From national-scale data pipelines at Sri Lanka Telecom to multi-agent LLM systems with traceable RAG retrieval, I build ML solutions that work in production. Final-year research focuses on GNNs, Knowledge Graphs and LLMs for adaptive learning.',
+    'Fourth-year Data Science undergraduate at SLIIT with a completed ML Engineering internship and real-world experience in geospatial analytics, predictive modelling and agentic AI. From national-scale data pipelines at Sri Lanka Telecom to multi-agent LLM systems with traceable RAG retrieval, I build ML solutions that work in production. Final-year research focuses on GNNs, Knowledge Graphs and LLMs for adaptive learning.',
   email: 'reshikaamarasinghe@gmail.com',
   github: 'https://github.com/reshika1219',
   linkedin: 'https://linkedin.com/in/reshika-amarasinghe',
 }
 
 export const stats = [
-  { label: 'CGPA', value: 3.37, decimals: 2, suffix: ' / 4.0' },
   { label: 'Hex cells mapped', value: 14000, prefix: '~' },
   { label: 'Fibre points (FDPs)', value: 141000 },
   { label: 'Study participants', value: 471 },
@@ -159,7 +158,7 @@ export const skills = [
 ]
 
 export const education = [
-  { name: 'SLIIT', detail: 'BSc (Hons) in Information Technology (Data Science)', meta: 'Jun 2023 – Present · Year 4, Semester 1 · CGPA 3.37 / 4.0' },
+  { name: 'SLIIT', detail: 'BSc (Hons) in Information Technology (Data Science)', meta: 'Jun 2023 – Present · Year 4, Semester 1' },
   { name: 'Kegalu Vidyalaya', detail: 'GCE Advanced Level (Physical Science)', meta: '2022 · Combined Maths A · Physics B · Chemistry C · English A' },
 ]
 

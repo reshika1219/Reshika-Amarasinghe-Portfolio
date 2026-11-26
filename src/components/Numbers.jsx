@@ -6,7 +6,7 @@ const nums = [
   ['141,000', 'fibre distribution points mapped for Sri Lanka Telecom', 'bg-lime', '-rotate-1'],
   ['AUC > 0.99', 'churn model, deployed in Streamlit', 'bg-blue text-cream', 'rotate-1'],
   ['471', 'participants in my data-viz study', 'bg-tang', 'rotate-1'],
-  ['3.37', 'CGPA out of 4.0 · BSc (Hons) Data Science', 'bg-cream', '-rotate-1'],
+  ['19', 'cloud certificates: 11 on AWS, 8 on Azure', 'bg-cream', '-rotate-1'],
 ]
 
 const funnel = [['141,000', 'fibre points'], ['~14,000', 'grid cells'], ['51 → 17', 'features'], ['100', 'priority cells']]
