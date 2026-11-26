@@ -18,30 +18,27 @@ export const stats = [
 
 export const experience = [
   {
-    result: 'VICTORY',
+    role: 'ML Engineer Intern',
     org: 'Sri Lanka Telecom PLC · The Embryo (R&D)',
     date: 'Dec 2025 – Jun 2026',
-    kda: [['Hex cells', '~14k'], ['Features', '17 / 51'], ['Priority picks', 'Top 100']],
     points: [
       'Built a national-scale geospatial pipeline covering all Sri Lankan households and 141,000 fibre distribution points across ~14,000 hexagonal grid cells, engineering 17 features from 51 raw variables into ML-ready datasets.',
       'Built and validated models that predict the top 100 priority hexagons for service expansion, with customer mapping, purchase predictions and interactive visual reports for R&D decisions.',
     ],
   },
   {
-    result: 'VICTORY',
+    role: 'Data Annotator',
     org: 'Appen · Eco Pairwise EN (client: ByteDance)',
     date: 'Feb – May 2026',
-    kda: [['Task', 'Pairwise'], ['Domain', 'Video'], ['Goal', 'Alignment']],
     points: [
       'Contributed structured video annotations used to train and fine-tune large-scale AI/ML models.',
       'Applied labelling guidelines consistently to evaluate and rank video pairs, supporting model alignment and output quality.',
     ],
   },
   {
-    result: 'VICTORY',
+    role: 'Personal Assistant to the Managing Director',
     org: 'Tritech Services & Solutions (Pvt) Ltd',
     date: '2023',
-    kda: [['Role', 'Support'], ['Scope', 'Exec'], ['Focus', 'Delivery']],
     points: [
       'Executive-level support: calendars, correspondence, cross-functional communication and timely delivery of project documentation.',
     ],
