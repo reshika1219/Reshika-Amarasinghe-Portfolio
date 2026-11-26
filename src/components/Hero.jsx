@@ -1,31 +1,31 @@
 import { motion } from 'framer-motion'
-import { profile, skills } from '../data/content'
+import { profile } from '../data/content'
 
-const all = skills.flatMap((g) => g.items.filter(([, t]) => t < 2).map(([n]) => n))
+const words = ['GEOSPATIAL', 'AGENTIC AI', 'RAG', 'GNNs', 'KNOWLEDGE GRAPHS', 'PREDICTIVE MODELS', 'PYTHON', 'SQL', 'R']
 
 export default function Hero() {
-  const fade = (d) => ({ initial: { opacity: 0, y: 24 }, animate: { opacity: 1, y: 0 }, transition: { delay: d, duration: .7, ease: 'easeOut' } })
   return (
-    <section id="top" className="relative overflow-hidden pt-36 sm:pt-44">
-      <div aria-hidden className="pointer-events-none absolute left-1/2 top-0 -z-10 h-[520px] w-[900px] -translate-x-1/2 rounded-full opacity-40 blur-3xl" style={{ background: 'radial-gradient(closest-side, #c7d2fe, transparent), radial-gradient(closest-side at 80% 30%, #ffd9cc, transparent)' }} />
-      <div className="mx-auto max-w-6xl px-6 text-center">
-        <motion.p {...fade(0)} className="mx-auto inline-flex items-center gap-2 rounded-full border border-line bg-white px-4 py-1.5 text-sm text-mute shadow-sm">
-          <i className="h-2 w-2 rounded-full bg-emerald-500" /> Open to internships &amp; graduate roles
-        </motion.p>
-        <motion.p {...fade(.1)} className="mt-8 text-lg font-medium text-mute">Hi, I'm Reshika Amarasinghe.</motion.p>
-        <motion.h1 {...fade(.2)} className="mx-auto mt-3 max-w-4xl text-5xl font-semibold leading-[1.04] tracking-tight sm:text-7xl">
-          I turn national-scale data into <span className="serif grad-text pr-1 text-[1.08em]">decisions</span>, and LLMs into things you can trust.
+    <section id="top" className="relative overflow-hidden px-5 pb-10 pt-32 sm:pt-40">
+      <div className="mx-auto max-w-6xl">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="flex flex-wrap gap-3">
+          <span className="brut-sm wobble rounded-full bg-lime px-4 py-1.5 text-sm font-bold">Data Science Undergrad</span>
+          <span className="brut-sm rotate-2 rounded-full bg-pink px-4 py-1.5 text-sm font-bold">ML Engineer</span>
+          <span className="brut-sm -rotate-2 rounded-full bg-blue px-4 py-1.5 text-sm font-bold text-cream">Open to work</span>
+        </motion.div>
+        <motion.h1 initial={{ opacity: 0, y: 60 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .1, duration: .8, type: 'spring', bounce: .3 }}
+          className="mt-8 font-display text-[clamp(3.5rem,13.5vw,11rem)] font-extrabold uppercase leading-[.86] tracking-tighter">
+          Reshika<br /><span className="text-blue">Amara</span>singhe
         </motion.h1>
-        <motion.p {...fade(.35)} className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-mute">Data science undergraduate and ML engineer, building geospatial pipelines, predictive models and agentic AI systems.</motion.p>
-        <motion.div {...fade(.5)} className="mt-9 flex flex-wrap justify-center gap-3">
-          <a href="#projects" className="rounded-full bg-ink px-7 py-3.5 text-sm font-medium text-white transition-transform hover:-translate-y-0.5">See my work</a>
-          <a href={profile.github} target="_blank" rel="noreferrer" className="rounded-full border border-line bg-white px-7 py-3.5 text-sm font-medium transition-transform hover:-translate-y-0.5">GitHub ↗</a>
-          <a href={profile.linkedin} target="_blank" rel="noreferrer" className="rounded-full border border-line bg-white px-7 py-3.5 text-sm font-medium transition-transform hover:-translate-y-0.5">LinkedIn ↗</a>
+        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: .5 }} className="mt-8 max-w-2xl font-display text-2xl font-semibold leading-snug sm:text-3xl">{profile.tagline}</motion.p>
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: .7 }} className="mt-8 flex flex-wrap gap-4">
+          <a href="#projects" className="brut brut-hover bg-ink px-7 py-3.5 font-bold text-cream">See the work →</a>
+          <a href={profile.github} target="_blank" rel="noreferrer" className="brut brut-hover bg-cream px-7 py-3.5 font-bold">GitHub ↗</a>
+          <a href={profile.linkedin} target="_blank" rel="noreferrer" className="brut brut-hover bg-cream px-7 py-3.5 font-bold">LinkedIn ↗</a>
         </motion.div>
       </div>
-      <div className="mt-20 overflow-hidden border-y border-line bg-white py-5" aria-hidden>
-        <div className="marquee flex w-max gap-10 whitespace-nowrap text-sm font-medium text-mute">
-          {[...all, ...all].map((n, i) => <span key={i} className="flex items-center gap-10">{n}<i className="h-1 w-1 rounded-full bg-line" /></span>)}
+      <div className="relative -mx-5 mt-16 -rotate-2 overflow-hidden border-y-[3px] border-ink bg-tang py-3" aria-hidden>
+        <div className="ribbon flex w-max whitespace-nowrap font-display text-xl font-extrabold">
+          {[...words, ...words, ...words, ...words].map((w, i) => <span key={i} className="mx-5">{w} ✺</span>)}
         </div>
       </div>
     </section>

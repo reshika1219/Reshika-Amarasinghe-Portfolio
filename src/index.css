@@ -1,20 +1,23 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #fbfbfd;
-  --color-ink: #0f172a;
-  --color-mute: #64748b;
-  --color-line: #e6e8ef;
-  --color-brand: #4f46e5;
-  --color-coral: #ff7a59;
+  --color-cream: #f4efe6;
+  --color-ink: #111111;
+  --color-blue: #2b50ff;
+  --color-pink: #ff5fa2;
+  --color-lime: #c6f432;
+  --color-tang: #ff6a2b;
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
   --font-sans: "Inter", system-ui, sans-serif;
-  --font-serif: "Instrument Serif", Georgia, serif;
 }
 html { scroll-behavior: smooth; }
-body { background: var(--color-bg); color: var(--color-ink); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
-::selection { background: #c7d2fe; }
-.serif { font-family: var(--font-serif); font-style: italic; font-weight: 400; }
-.grad-text { background: linear-gradient(90deg, #4f46e5, #ff7a59); -webkit-background-clip: text; background-clip: text; color: transparent; }
-@keyframes marquee { from { transform: translateX(0) } to { transform: translateX(-50%) } }
-.marquee { animation: marquee 40s linear infinite; }
+body { background: var(--color-cream); color: var(--color-ink); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+::selection { background: var(--color-lime); }
+.brut { border: 3px solid var(--color-ink); box-shadow: 6px 6px 0 var(--color-ink); transition: transform .15s, box-shadow .15s; }
+.brut-hover:hover { transform: translate(-3px, -3px); box-shadow: 9px 9px 0 var(--color-ink); }
+.brut-sm { border: 2px solid var(--color-ink); box-shadow: 3px 3px 0 var(--color-ink); }
+@keyframes ribbon { from { transform: translateX(0) } to { transform: translateX(-50%) } }
+.ribbon { animation: ribbon 30s linear infinite; }
+@keyframes wobble { 0%,100% { transform: rotate(-4deg) } 50% { transform: rotate(3deg) } }
+.wobble { animation: wobble 4s ease-in-out infinite; }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
