@@ -22,3 +22,7 @@ body { background: var(--color-cream); color: var(--color-ink); font-family: var
 .wobble { animation: wobble 4s ease-in-out infinite; }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
 section[id] { scroll-margin-top: 5.5rem; }
+
+:focus-visible { outline: 3px solid var(--color-ink); outline-offset: 3px; border-radius: 4px; }
+.skip { position: fixed; left: 1rem; top: -4rem; z-index: 100; background: var(--color-lime); color: var(--color-ink); border: 3px solid var(--color-ink); padding: .5rem 1rem; font-weight: 700; transition: top .15s; }
+.skip:focus { top: 1rem; }

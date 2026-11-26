@@ -12,5 +12,5 @@ import Contact from './components/Contact'
 
 export default function App() {
   useEffect(() => { applyPalette(savedPalette()) }, [])
-  return (<><Progress /><Nav /><main><Hero /><Numbers /><Experience /><Projects /><Skills /><Offline /><Contact /></main></>)
+  return (<><Progress /><Nav /><main id="content"><Hero /><Numbers /><Experience /><Projects /><Skills /><Offline /><Contact /></main></>)
 }
