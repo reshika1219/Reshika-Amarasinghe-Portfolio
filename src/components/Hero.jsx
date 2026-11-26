@@ -1,30 +1,26 @@
 import { motion } from 'framer-motion'
-import { profile, stats, splash, heroArt } from '../data/content'
-import { sfx } from '../lib'
+import { profile } from '../data/content'
+import DotMap from './DotMap'
 
 export default function Hero() {
   return (
-    <section id="top" className="relative flex min-h-screen items-center overflow-hidden">
-      <motion.img src={splash(heroArt)} alt="" initial={{ opacity: 0 }} animate={{ opacity: .55 }} transition={{ duration: 2.5 }}
-        className="absolute right-0 top-0 h-full w-full object-cover object-[75%_20%] md:w-[65%]"
-        style={{ WebkitMaskImage: 'linear-gradient(to right, transparent, #000 45%), linear-gradient(to top, transparent, #000 35%)', WebkitMaskComposite: 'source-in', maskComposite: 'intersect', maskImage: 'linear-gradient(to right, transparent, #000 45%), linear-gradient(to top, transparent, #000 35%)' }} />
-      <div className="relative mx-auto w-full max-w-5xl px-6 pt-24">
-        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: .4 }} className="text-xs font-medium uppercase tracking-[.4em] text-hex">Data Science · Machine Learning</motion.p>
-        <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .6, duration: .9 }} className="mt-6 font-display text-6xl font-medium leading-[1.02] text-gold-hi sm:text-8xl">
-          Reshika<br /><span className="text-gold">Amarasinghe</span>
+    <section id="top" className="mx-auto grid min-h-screen max-w-6xl items-center gap-10 px-6 pb-16 pt-28 lg:grid-cols-[1.25fr_1fr]">
+      <div>
+        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="font-mono text-xs uppercase tracking-widest text-accent">Data science · ML engineering</motion.p>
+        <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .1, duration: .8 }} className="mt-5 font-display text-6xl leading-[.98] tracking-tight sm:text-8xl">
+          Reshika<br />Amarasinghe
         </motion.h1>
-        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }} className="mt-8 max-w-md text-lg leading-relaxed text-gold-hi/70">{profile.tagline}</motion.p>
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2 }} className="mt-10 flex gap-8 text-sm">
-          <a href="#champions" onMouseEnter={sfx.hover} onClick={sfx.select} className="link-u border-b border-gold pb-1 text-gold-hi">View projects →</a>
-          <a href="#contact" onMouseEnter={sfx.hover} onClick={sfx.click} className="link-u pb-1 text-gold-hi/60">Get in touch</a>
+        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: .4 }} className="mt-8 max-w-xl font-display text-2xl leading-snug text-ink/80 sm:text-3xl">{profile.tagline}</motion.p>
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: .6 }} className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm">
+          <a href="#work" className="rounded-full bg-ink px-6 py-3 text-paper transition-colors hover:bg-accent">See selected work</a>
+          <a href={profile.github} target="_blank" rel="noreferrer" className="link-u">GitHub ↗</a>
+          <a href={profile.linkedin} target="_blank" rel="noreferrer" className="link-u">LinkedIn ↗</a>
         </motion.div>
-        <motion.dl initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }} className="mt-20 grid max-w-2xl grid-cols-2 gap-6 sm:grid-cols-4">
-          {stats.map((s) => (
-            <div key={s.label}><dt className="font-display text-2xl text-gold-hi">{s.prefix}{s.decimals ? s.value.toFixed(s.decimals) : s.value.toLocaleString()}</dt><dd className="mt-1 text-[11px] text-gold-hi/45">{s.label}</dd></div>
-          ))}
-        </motion.dl>
       </div>
-      <p className="absolute bottom-3 right-4 text-[10px] text-gold-hi/30">Art: Viktor · Riot Games</p>
+      <motion.figure initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: .3, duration: 1.2 }} className="flex flex-col items-center">
+        <DotMap />
+        <figcaption className="mt-3 max-w-xs text-center font-mono text-[11px] leading-relaxed text-mute">Illustration: Sri Lanka as a dot grid. Highlighted dots echo the top-100 priority cells ranked in my SLT pipeline.</figcaption>
+      </motion.figure>
     </section>
   )
 }
