@@ -18,7 +18,7 @@ export default function Numbers() {
         <motion.figure initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="brut min-w-0 bg-ink p-5 text-cream sm:p-7">
           <div className="flex items-start justify-between gap-4">
             <div><p className="font-display text-2xl font-extrabold leading-tight">Sri Lanka, scored.</p><p className="mt-1 text-sm text-cream/70">My SLT pipeline ranked ~14,000 grid cells and predicted the top 100 for service expansion.</p></div>
-            <span className="brut-sm -rotate-3 shrink-0 bg-lime px-3 py-1 text-xs font-bold text-ink">hover me</span>
+            <span className="brut-sm -rotate-3 shrink-0 bg-lime px-3 py-1 text-xs font-bold text-ink">hover or tap me</span>
           </div>
           <div className="mt-4"><DotMap /></div>
           <figcaption className="mt-3 text-xs text-cream/50">Illustration: a dot grid of Sri Lanka. Highlighted dots echo the top-100 cells, not their real locations.</figcaption>
