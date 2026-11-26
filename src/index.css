@@ -10,8 +10,8 @@
   --font-display: "Bricolage Grotesque", system-ui, sans-serif;
   --font-sans: "Inter", system-ui, sans-serif;
 }
-html { scroll-behavior: smooth; }
-body { background: var(--color-cream); color: var(--color-ink); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+html { scroll-behavior: smooth; overflow-x: clip; }
+body { background: var(--color-cream); color: var(--color-ink); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; overflow-x: clip; }
 ::selection { background: var(--color-lime); }
 .brut { border: 3px solid var(--color-ink); box-shadow: 6px 6px 0 var(--color-ink); transition: transform .15s, box-shadow .15s; }
 .brut-hover:hover { transform: translate(-3px, -3px); box-shadow: 9px 9px 0 var(--color-ink); }
@@ -21,3 +21,4 @@ body { background: var(--color-cream); color: var(--color-ink); font-family: var
 @keyframes wobble { 0%,100% { transform: rotate(-4deg) } 50% { transform: rotate(3deg) } }
 .wobble { animation: wobble 4s ease-in-out infinite; }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+section[id] { scroll-margin-top: 5.5rem; }

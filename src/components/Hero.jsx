@@ -13,7 +13,7 @@ export default function Hero() {
           <span className="brut-sm -rotate-2 rounded-full bg-blue px-4 py-1.5 text-sm font-bold text-cream">Open to work</span>
         </motion.div>
         <motion.h1 initial={{ opacity: 0, y: 60 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .1, duration: .8, type: 'spring', bounce: .3 }}
-          className="mt-8 font-display text-[clamp(3.5rem,13.5vw,11rem)] font-extrabold uppercase leading-[.86] tracking-tighter">
+          className="mt-8 font-display text-[clamp(2.4rem,11.2vw,11rem)] font-extrabold uppercase leading-[.86] tracking-tighter">
           Reshika<br /><span className="text-blue">Amara</span>singhe
         </motion.h1>
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: .5 }} className="mt-8 max-w-2xl font-display text-2xl font-semibold leading-snug sm:text-3xl">{profile.tagline}</motion.p>
